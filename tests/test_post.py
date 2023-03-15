@@ -118,6 +118,8 @@ class TestPostAPI:
 
         db_post = Post.objects.get(text=another_post.text)
         test_post = test_data.get('results')[0]
+        print(db_post)
+        print(test_post)
         self.check_post_data(
             response_data=test_post,
             request_method_and_url=(
