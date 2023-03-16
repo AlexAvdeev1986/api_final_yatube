@@ -1,3 +1,4 @@
+from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
@@ -5,7 +6,7 @@ from django.contrib.auth import get_user_model
 from posts.models import Follow
 
 
-class FollowTests():
+class FollowTests(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.user1 = get_user_model().objects.create_user(
