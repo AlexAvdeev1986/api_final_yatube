@@ -26,7 +26,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class GroupSerializer(serializers.ModelSerializer):
 
-    class Meta():
+    class Meta:
         fields = '__all__'
         model = Group
 
@@ -37,7 +37,6 @@ class FollowSerializer(serializers.ModelSerializer):
         slug_field='username',
         default=serializers.CurrentUserDefault())
     following = serializers.SlugRelatedField(
-        # read_only=True,
         slug_field='username',
         queryset=User.objects.all())
 
