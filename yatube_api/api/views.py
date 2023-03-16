@@ -56,7 +56,7 @@ class FollowViewSet(viewsets.ModelViewSet):
     pagination_class = None
 
     def get_queryset(self):
-        return self.request.user.following.all()
+        return Follow.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
