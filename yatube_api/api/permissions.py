@@ -1,7 +1,7 @@
 from rest_framework import permissions
 
 
-class IsOwnerOrReadOnly(permissions.BasePermission):
+class AllowAny(permissions.BasePermission):
     def has_permission(self, request, view):
         """Чтение все. Измнения только авторизованные пользователи"""
         if request.method in permissions.SAFE_METHODS:
