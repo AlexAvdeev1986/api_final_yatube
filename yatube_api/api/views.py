@@ -54,7 +54,6 @@ class FollowViewSet(viewsets.ModelViewSet):
         "user__username",
         "following__username",
     )
-    pagination_class = None
 
     def get_queryset(self):
         return Follow.objects.filter(user=self.request.user)
