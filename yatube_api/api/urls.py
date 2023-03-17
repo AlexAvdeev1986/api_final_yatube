@@ -17,12 +17,12 @@ router.register(
 router.register(r"follow", FollowViewSet, basename="follow")
 
 jwt_patterns = [
-    path('create/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path("create/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("verify/", TokenVerifyView.as_view(), name="token_verify"),
 ]
 
 urlpatterns = [
-    path('v1/jwt/', include(jwt_patterns)),
-    path('v1/', include(router.urls)),
+    path("v1/jwt/", include(jwt_patterns)),
+    path("v1/", include(router.urls)),
 ]
